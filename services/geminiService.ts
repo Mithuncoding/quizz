@@ -1,6 +1,8 @@
 import { GoogleGenAI, Type, Chat } from "@google/genai";
 import { Quiz, Difficulty, Question } from '../types';
 
+const API_KEY = "AIzaSyBaPW9f5Xpy3fh8YODCMQKQbNW99jKNjFQ";
+
 const quizSchema = {
     type: Type.OBJECT,
     properties: {
@@ -40,10 +42,7 @@ const quizSchema = {
 
 export const generateQuiz = async (context: string, questionCount: number, difficulty: Difficulty): Promise<Quiz | null> => {
     try {
-        if (!process.env.API_KEY) {
-            throw new Error("API key is not configured.");
-        }
-        const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+        const ai = new GoogleGenAI({ apiKey: API_KEY });
 
         const prompt = `Based on the following context, please generate a quiz with ${questionCount} multiple-choice questions of ${difficulty} difficulty. Each question must have exactly 4 options and a brief explanation for the correct answer. The context is: \n\n---\n${context}\n---`;
 
@@ -74,10 +73,7 @@ export const generateQuiz = async (context: string, questionCount: number, diffi
 };
 
 export const createStudyBuddyChat = (question: Question, userAnswer: string): Chat => {
-    if (!process.env.API_KEY) {
-        throw new Error("API key is not configured.");
-    }
-    const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+    const ai = new GoogleGenAI({ apiKey: API_KEY });
     
     const systemInstruction = `You are a friendly, expert tutor. The user is asking for help with a quiz question they answered incorrectly. 
     
