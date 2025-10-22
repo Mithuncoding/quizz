@@ -1,0 +1,5 @@
+{
+  "name": "Advanced Quiz Generator",
+  "description": "An intelligent quiz application that generates custom quizzes from topics or PDF documents, providing an interactive and educational experience.",
+  "requestFramePermissions": []
+}

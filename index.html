@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='%234f46e5' d='M50 0A50 50 0 1 0 50 100A50 50 0 1 0 50 0ZM32.7 75.2V24.8h11.8l13.8 21.6c2.1 3.3 3.9 6.4 5.4 9.3h.2c-.2-3.8-.3-8.1-.3-13V24.8h11.1V75.2H59.5L45.4 53.2c-2.3-3.6-4.2-6.9-5.7-9.9h-.2c.1 4 .2 8.3.2 12.8v19.1H32.7Z'%3E%3C/path%3E%3C/svg%3E" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QuizMaster AI - Your Personal Quiz Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- PDF.js library from Mozilla CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script>
+      // Required for PDF.js to work
+      pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.26.0"
+  }
+}
+</script>
+</head>
+  <body class="bg-slate-900 text-slate-300">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
